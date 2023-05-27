@@ -1,0 +1,252 @@
+.todo-container{
+    display:flex;
+    flex-direction: column;
+    width: 250px;
+    /* background-color:rgba(133,130,130, 0.7); */
+    /* border: 1.5px solid #E5E7EB; */
+
+    border-radius: 6px;
+    padding: 10px 20px;
+    margin: 10px;
+    /* box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05); */
+
+    background: #FFFFFF;
+    /* Black 18% Opacity */
+
+    border: 0.6px solid rgba(0, 0, 0, 0.18);
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 23px;
+}
+.checklist-total{
+    min-height: 300px;
+    border: 1px solid #F9FAFB;
+    border-radius: 6px;
+    width: 100%;
+
+    
+}
+.checklist{
+    display: flex;
+    /* border: 2px solid pink; */
+    /* border-bottom: 2px solid #E5E7EB; */
+    width: 230px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    margin: 0px;
+    justify-content: space-between;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.checklist-total-container :hover {
+    background-color: #EEE9FD;
+}
+
+.checklist-total-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+
+.checklist-container{
+    width: 210px;
+    text-align: left;
+}
+
+.options{
+    /* align-self:flex-end; */
+    cursor: pointer;
+
+    color: #fff;
+}
+.checklist-add form {
+    display: flex;
+    gap: 5px;
+}
+
+.checklist-add input{
+    background: #FEFEFF;
+    border: 1.2px solid rgba(0, 0, 0, 0.14);
+    border-radius: 6px;
+    padding: 0px 10px;
+    line-height: 30px;
+}
+.checkbox{
+    border: 2px solid #FEFEFF;
+    background: #7D4EED;
+    border-radius: 5px
+}
+.checklist-checkbox input:checked:after{
+    display: block;
+    border: 2px solid #FEFEFF;
+    background: #7D4EED;
+    border-radius: 5px
+}
+input[type='checkbox'] {
+    accent-color: #7D4EED;
+}
+.checklist-add button{
+    background: #000000;
+    border-radius: 6px;  
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    /* margin: 10px 5px; */
+}
+
+p {
+    padding: 5px;
+    margin: 0px;
+}
+
+/* .checklist-add{
+    display: flex;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    align-self: flex-end;
+} */
+
+
+.new-list-btn{
+    width: 100px;
+    height: 50px;
+    margin-top: 10px;
+    background: #000000;
+    border-radius: 6px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    width: 159px;
+    height: 38px;
+}
+
+.select-total-container{
+    display:flex;
+    justify-content: space-between;
+
+}
+
+.edit-list-container{
+    display:flex;
+    height: 25px;
+    justify-content: space-between;
+}
+
+.edit-list-form{
+}
+
+.edit-list-form-input{
+    max-width:70%;
+}
+
+.edit-list-icons{
+}
+
+.select-list-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.select-list-form{
+    display:flex;
+    gap: 2px;
+    width:100%;
+    justify-content: space-between;
+
+}
+.select-list-form-input{
+    background: #FFFFFF;
+    border: 1.4px solid rgba(0, 0, 0, 0.14);
+    border-radius: 6px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #000000;
+    padding: 10px;
+
+}
+
+textarea{
+    resize: none;
+    /* position: fixed;
+    left: 20px;
+    top: 40px; */
+    /* height: 5px; */
+    /* width: 70px; */
+}
+
+.select-list-form-input:focus{
+    background:#ffffff;
+    border: 2px solid #6837E7;
+}
+
+.select-list-form-btn{
+    background: #000000;
+    border-radius: 6px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    
+}
+@media screen and (max-width:1240px) {
+    .todo-container{
+        display:block;
+        width: 85%;
+   
+    }
+
+    .checklist-total-container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .checklist-total{
+        width: 100%;
+        min-height: 50px;
+    }
+
+    .checklist-container{
+        width: 100%;
+        text-align: left;
+
+    }
+    .checklist{
+        width: 100%;
+
+    }
+
+    .options{
+        cursor: pointer;
+    }
+    .select-list-form-input{
+        width: 300px;
+
+    }
+
+    .edit-list-form-input{
+        width: 185px;
+    }
+
+
+}
