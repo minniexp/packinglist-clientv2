@@ -30,7 +30,7 @@ export default function EditList(props) {
 
   const editItem = () => {
     parseLocalData[categoryIndex].items[itemIndex] = edittask
-    console.log("EditList.js localData", parseLocalData)
+    // console.log("EditList.js localData", parseLocalData)
     props.handleDataOutput(parseLocalData)
 
     localStorage.setItem(listID, JSON.stringify(parseLocalData))
@@ -44,8 +44,8 @@ export default function EditList(props) {
   const deleteItem = () => {
     let udpatedArray = []
     parseLocalData[categoryIndex].items.map((data, key)=>{
-      console.log("data", data)
-      console.log("key", key)
+      // console.log("data", data)
+      // console.log("key", key)
       if (key !== itemIndex){
         udpatedArray.push(data)
       }

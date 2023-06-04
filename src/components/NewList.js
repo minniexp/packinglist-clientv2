@@ -29,7 +29,7 @@ export default function NewList(props) {
     let listID = location.pathname.substring(location.pathname.lastIndexOf('/') + 1)
     let localStorageData = localStorage.getItem(listID)
     let listStorageData = JSON.parse(localStorageData)
-    console.log("NewList.js listStorageData: ", listStorageData)
+    // console.log("NewList.js listStorageData: ", listStorageData)
     listStorageData = [...listStorageData, {"categoryName": newCategory, "items": updatedTask}]
     
     props.handleDataOutput(prev => [...prev, {"categoryName": newCategory, "items": updatedTask}])

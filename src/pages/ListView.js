@@ -33,7 +33,16 @@ export default function ListView(props) {
   // })
   // const [currentList, setCurrentList] = useState(props.listTitle)
   const location = useLocation();
-  const apiURL = process.env.REACT_APP_API_URL;
+  
+  let apiURL;
+
+  if (process.env.NODE_ENV === 'development') {
+    apiURL = "http://localhost:5000";
+  } else {
+    apiURL = process.env.REACT_APP_API_URL
+  }
+
+  // const apiURL = process.env.REACT_APP_API_URL;
 
   function handleArray(input, property, filterproperty, filtertitle) {
     for (let i = 0; i < input.length; i++) {
@@ -92,14 +101,14 @@ export default function ListView(props) {
       setTitle(localStorage.getItem("listname"))
       setDataOutput(listStorageData)
     } else {
-      console.log("localStorage not exist")
+      // console.log("localStorage not exist")
       Axios.get(`${apiURL}/api/v1/finalcheck/getlist/${listID}`)
         .then((response) => {
           // console.log("response cateogry: ", response)
           setTitle(response.data[0].listName);
           setDataInput(response.data[1])
 
-          console.log("response data: ", response.data[1])
+          // console.log("response data: ", response.data[1])
 
           let dataObject = {}
           let dataArray = response.data[1].map((obj, key) =>{
@@ -125,13 +134,13 @@ export default function ListView(props) {
   }, [newListCreated, deleteCateogryClick, changeClick]);
 
   const handleSave = () => {
-    console.log("handle Save FIRST")
+    // console.log("handle Save FIRST")
     let listID = location.pathname.substring(location.pathname.lastIndexOf('/') + 1)
 
     // console.log("dataInput[key].categoryName: ", dataInput[0].categoryName)
     let index = 0
     let listNameTitle = localStorage.getItem("listname")
-    console.log("listNameTitle: ", listNameTitle)
+    // console.log("listNameTitle: ", listNameTitle)
     // update title
     Axios.post(`${apiURL}/api/v1/finalcheck/update/title`, {
       "id": listID, 
@@ -142,7 +151,7 @@ export default function ListView(props) {
     })
     .catch((error) => console.log(error));
 
-    console.log("Listview.js datainput: ", dataInput)
+    // console.log("Listview.js datainput: ", dataInput)
     dataOutput.map((item, key) => {
       console.log("Listview.js dataoutput key: ", key)
       index = key

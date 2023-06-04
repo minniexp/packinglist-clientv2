@@ -46,10 +46,10 @@ export default function Change(props) {
   const handleDeleteSelect = () => {
     console.log("handling");
     if (selectComp === "category") {
-      console.log("Change.js handling delete category")
-      console.log("Change.js listID: ", listID)
+      // console.log("Change.js handling delete category")
+      // console.log("Change.js listID: ", listID)
 
-      console.log("Change.js listStorageData: ", listStorageData)
+      // console.log("Change.js listStorageData: ", listStorageData)
 
       let udpatedArray = []
       listStorageData.map((data, key)=>{
@@ -57,7 +57,7 @@ export default function Change(props) {
           udpatedArray.push(data)
         }
       })
-      console.log("Change.js udpatedArray: ", udpatedArray)
+      // console.log("Change.js udpatedArray: ", udpatedArray)
 
       listStorageData = udpatedArray
       props.handleDataOutput(udpatedArray)
@@ -76,14 +76,14 @@ export default function Change(props) {
       setDeleteSelect(true);
       setOptionsSelect((prev) => !prev);
     } else if (selectComp === "title") {
-      console.log("Change.js handling delete title")
+      // console.log("Change.js handling delete title")
 
       Axios.post(`${apiURL}/api/v1/finalcheck/deletelist`, {
         "id": listID, 
       })
       .then(() => {
         localStorage.removeItem(listID)
-        console.log(`successfuly deleted ${selectComp}`);
+        // console.log(`successfuly deleted ${selectComp}`);
         setDeleteSelect(false);
         setOptionsSelect((prev) => !prev);
         navigate("/")
@@ -115,7 +115,7 @@ export default function Change(props) {
       //     props.handleChangeClick((prev) => !prev)
       //   })
       //   .catch((error) => console.log(error));
-        console.log("Change.js handling edit category")
+        // console.log("Change.js handling edit category")
         inputRef.current.value = "";
         setOptionsSelect((prev) => !prev);
         setCurrentSelect(newSelect);
@@ -123,7 +123,7 @@ export default function Change(props) {
     } else if (selectComp === "title") {
       localStorage.setItem("listname", newSelect)
 
-      console.log("Change.js handling edit title")
+      // console.log("Change.js handling edit title")
 
       // Axios.post(`${apiURL}/api/v1/finalcheck/edittitle`, {
       //   title: newSelect,

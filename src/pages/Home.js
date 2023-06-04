@@ -26,10 +26,10 @@ export default function Home(props) {
     Axios.post(`${apiURL}/api/v1/finalcheck/create/list`, {
       "listName": listName
     }).then((res) => {
-      console.log("res content: ", res);
+      // console.log("res content: ", res);
       let newListID = res.data._id
       let urlString = `/list/${newListID}`
-      console.log("urlStringNow is ", urlString)
+      // console.log("urlStringNow is ", urlString)
       localStorage.setItem("listname", res.data.listName)
 
       setQuery(listName)
@@ -40,7 +40,7 @@ export default function Home(props) {
 
   function onSubmit(e) {
     e.preventDefault();
-    console.log("onsubmit called");
+    // console.log("onsubmit called");
 
     const valueInputList = inputRef.current.value;
     if (valueInputList === "") return;
@@ -81,7 +81,7 @@ export default function Home(props) {
   };
 
   useEffect(() => {
-    console.log("getting all lists");
+    // console.log("getting all lists");
 
     trackPromise(
       Axios.get(`${apiURL}/api/v1/finalcheck/getAllLists`).then((response) => {
