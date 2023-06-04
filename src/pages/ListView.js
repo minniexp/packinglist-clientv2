@@ -8,6 +8,17 @@ import { useLocation } from "react-router-dom";
 import "../styles/ListView.css";
 
 export default function ListView(props) {
+  let apiURL;
+  console.log("apiURL OUT: ", apiURL)
+
+  if (process.env.NODE_ENV === 'development') {
+    apiURL = "http://localhost:5000";
+    console.log("apiURL IN: ", apiURL)
+  } else {
+    apiURL = process.env.REACT_APP_API_URL
+    console.log("apiURL IN: ", apiURL)
+
+  }
 
   const [categories, setCategories] = useState([]);
   const [changeClick, setChangeClick] = useState(false);
@@ -34,16 +45,7 @@ export default function ListView(props) {
   // const [currentList, setCurrentList] = useState(props.listTitle)
   const location = useLocation();
   
-  let apiURL;
 
-  if (process.env.NODE_ENV === 'development') {
-    apiURL = "http://localhost:5000";
-    console.log("apiURL: ", apiURL)
-  } else {
-    apiURL = process.env.REACT_APP_API_URL
-    console.log("apiURL: ", apiURL)
-
-  }
 
   // const apiURL = process.env.REACT_APP_API_URL;
 
