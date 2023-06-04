@@ -38,8 +38,11 @@ export default function ListView(props) {
 
   if (process.env.NODE_ENV === 'development') {
     apiURL = "http://localhost:5000";
+    console.log("apiURL: ", apiURL)
   } else {
     apiURL = process.env.REACT_APP_API_URL
+    console.log("apiURL: ", apiURL)
+
   }
 
   // const apiURL = process.env.REACT_APP_API_URL;
